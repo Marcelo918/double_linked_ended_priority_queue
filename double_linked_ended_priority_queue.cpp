@@ -20,3 +20,16 @@ public:
         cout << "{ " << setw(3) << data << "\t:\t" << setw(14) << prev << "\t:\t\t" << &data << "\t:\t" << setw(14) << next << " }" << endl;
     }
 };
+
+class DoubleEndedList
+{
+private:
+    Link *first, *last;
+public:
+    DoubleEndedList()
+    {
+        first = NULL;
+        last = NULL;
+    }
+
+};
