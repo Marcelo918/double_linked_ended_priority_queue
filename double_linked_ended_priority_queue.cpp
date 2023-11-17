@@ -39,4 +39,11 @@ public:
         first->display();
     }
 
+    // displays last item in the list
+    void displayLast()
+    {
+        cout << "Last: ";
+        last->display();
+    }
+
 };
