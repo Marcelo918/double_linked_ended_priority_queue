@@ -32,4 +32,11 @@ public:
         last = NULL;
     }
 
+    // displays first item in the list
+    void displayFirst()
+    {
+        cout << "First: ";
+        first->display();
+    }
+
 };
