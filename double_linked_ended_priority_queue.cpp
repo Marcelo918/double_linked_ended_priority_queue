@@ -25,6 +25,7 @@ class DoubleEndedList
 {
 private:
     Link *first, *last;
+
 public:
     DoubleEndedList()
     {
@@ -46,12 +47,55 @@ public:
         last->display();
     }
 
-     // checks if the list is empty
+    // checks if the list is empty
     bool empty()
     {
         cout << boolalpha;
         cout << "Is the queue empty? ";
-        return(first == NULL && last == NULL);
+        return (first == NULL && last == NULL);
     }
 
+    // inserts a new value in order
+    void insert(int newValue)
+    {
+        // makes new link
+        Link *newLink = new Link(newValue);
+
+        // if statement to check if there are not links
+        if (first == NULL)
+        {
+            cout << "Inserting the First/Last link: " << endl;
+            newLink->display();
+            cout << endl;
+            newLink->next = NULL;
+            newLink->prev = NULL;
+            first = newLink;
+            last = newLink;
+            return;
+        }
+
+        if (newValue < first->data)
+        {
+            cout << "Inserting new First link: " << endl;
+            newLink->display();
+
+            first->prev = newLink;
+            newLink->prev = NULL;
+            newLink->next = first;
+            first = newLink;
+            return;
+        }
+
+        if (newValue > last->data)
+        {
+            cout << "Inserting new Last link: " << endl;
+            newLink->display();
+
+            last->next = newLink;
+            newLink->prev = last;
+            newLink->next = NULL;
+            last = newLink;
+            return;
+        }
+    }
 };
