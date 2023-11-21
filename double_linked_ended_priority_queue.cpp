@@ -46,4 +46,12 @@ public:
         last->display();
     }
 
+     // checks if the list is empty
+    bool empty()
+    {
+        cout << boolalpha;
+        cout << "Is the queue empty? ";
+        return(first == NULL && last == NULL);
+    }
+
 };
