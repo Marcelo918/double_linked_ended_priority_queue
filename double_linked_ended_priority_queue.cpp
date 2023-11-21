@@ -97,5 +97,21 @@ public:
             last = newLink;
             return;
         }
+
+        cout << "Inserting the new link: " << endl;
+        newLink->display();
+
+        Link *Next = first;
+        while (Next != last)
+        {
+            if(newValue < Next->data)
+                break;
+            Next = Next->next;
+        }
+
+        newLink->next = Next;
+        newLink->prev = Next->prev;
+        Next->prev->next = newLink;
+        Next->prev = newLink;
     }
 };
