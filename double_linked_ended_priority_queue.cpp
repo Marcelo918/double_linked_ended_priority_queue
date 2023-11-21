@@ -104,7 +104,7 @@ public:
         Link *Next = first;
         while (Next != last)
         {
-            if(newValue < Next->data)
+            if (newValue < Next->data)
                 break;
             Next = Next->next;
         }
@@ -113,5 +113,27 @@ public:
         newLink->prev = Next->prev;
         Next->prev->next = newLink;
         Next->prev = newLink;
+    }
+
+    // displays the list forward
+    void displayList()
+    {
+        Link *current = first;
+        cout << "BEGIN LIST: " << endl;
+        cout << endl;
+        cout << "{ data\t:\t\t\tprev\t\t\tself\t\t\t\tnext\t\t}" << endl;
+
+        while (current != NULL)
+        {
+            current->display();
+            current = current->next;
+        }
+
+        cout << endl;
+        cout << "END LIST" << endl;
+        cout << endl;
+        displayFirst();
+        displayLast();
+        cout << endl;
     }
 };
