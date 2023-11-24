@@ -153,4 +153,15 @@ public:
         displayLast();
         cout << endl;
     }
+
+    // removes the first item in the list
+    void removeFirst()
+    {
+        cout << "Removing First: " << endl;
+
+        Link *deleteData = first;
+        first = first->next;
+        first->prev = NULL;
+        delete deleteData;
+    }
 };
