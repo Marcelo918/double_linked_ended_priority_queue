@@ -136,4 +136,21 @@ public:
         displayLast();
         cout << endl;
     }
+
+    // displays the list backwards
+    void displayBackward()
+    {
+        Link *current = last;
+        cout << "End of the List: " << endl;
+        cout << "{ data\t:\t\t\tprev\t\t\tself\t\t\t\tnext\t\t}" << endl;
+        while (current != NULL)
+        {
+            current->display();
+            current = current->prev;
+        }
+        cout << "Begin of the List: " << endl;
+        displayFirst();
+        displayLast();
+        cout << endl;
+    }
 };
