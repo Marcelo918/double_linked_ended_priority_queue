@@ -164,4 +164,15 @@ public:
         first->prev = NULL;
         delete deleteData;
     }
+
+    // removes the last item in the list
+    void removeLast()
+    {
+        cout << "Removing Last: " << endl;
+
+        Link *deleteData = last;
+        last = last->prev;
+        last->next = NULL;
+        delete deleteData;
+    }
 };
