@@ -175,4 +175,20 @@ public:
         last->next = NULL;
         delete deleteData;
     }
+
+     // removes a value from the list
+    void removeValue(int value)
+    {
+        if (first->data == value)
+        {
+            removeFirst();
+            return;
+        }
+        else if (last->data == value)
+        {
+            removeLast();
+            return;
+        }
+        
+    }
 };
