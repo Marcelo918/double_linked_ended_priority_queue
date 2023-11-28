@@ -12,6 +12,12 @@
 # ******************************************************************************
 */
 
+/*
+Description: The following code is a demostration of how a double linked ended priority queue works by implementing 
+             the following methods - void displayFirst(), void displayLast(), void displayList(), void displayBackward(),
+             void insert(int newValue), void removeFirst(), void removeLast(), void removeValue(int value)
+*/
+
 #include <iostream>  //need this for COUT and CIN
 using namespace std; // need this for COUT and CIN
 #include <iomanip>
@@ -190,7 +196,7 @@ public:
         delete deleteData;
     }
 
-     // removes a value from the list
+    // removes a value from the list
     void removeValue(int value)
     {
         if (first->data == value)
@@ -220,7 +226,6 @@ public:
         }
 
         cout << "Couldn't delete the link with value " << value << "because it was not found!" << endl;
-        
     }
 };
 
