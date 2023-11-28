@@ -189,6 +189,23 @@ public:
             removeLast();
             return;
         }
+
+        Link *deleteData = first;
+        while (deleteData != NULL)
+        {
+            if (deleteData->data == value)
+            {
+                cout << "Deleting: " << endl;
+                deleteData->display();
+                deleteData->next->prev = deleteData->prev;
+                deleteData->prev->next = deleteData->next;
+                delete deleteData;
+                return;
+            }
+            deleteData = deleteData->next;
+        }
+
+        cout << "Couldn't delete the link with value " << value << "because it was not found!" << endl;
         
     }
 };
