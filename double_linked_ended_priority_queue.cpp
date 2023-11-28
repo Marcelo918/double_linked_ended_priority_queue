@@ -209,3 +209,26 @@ public:
         
     }
 };
+
+int main()
+{
+    DoubleEndedList doubleLinkedList;
+    cout << doubleLinkedList.empty() << endl;
+    doubleLinkedList.insert(10);
+    doubleLinkedList.displayList();
+    doubleLinkedList.insert(25);
+    doubleLinkedList.insert(5);
+    doubleLinkedList.insert(45);
+    doubleLinkedList.insert(1);
+    doubleLinkedList.insert(100);
+    doubleLinkedList.displayList();
+    doubleLinkedList.displayBackward();
+    doubleLinkedList.removeFirst();
+    doubleLinkedList.removeLast();
+    doubleLinkedList.removeValue(25);
+    doubleLinkedList.displayList();
+    doubleLinkedList.insert(3);
+    doubleLinkedList.insert(99);
+    doubleLinkedList.displayFirst();
+    doubleLinkedList.displayLast();
+}
